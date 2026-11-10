@@ -1,0 +1,28 @@
+#include "unity.h"
+#include "MockExecutor.h"  // the mock include, note the capitalization here too
+#include "Main.h"
+
+
+void setUp(void)
+{
+}
+
+void tearDown(void)
+{
+}
+
+void test_Main_Should_InitializeTheDrivers(void)
+{
+    //
+    // NOTE: Do not attempt to test main() in Main.c directly.
+    //       See Lecture 9 for how to handle this special case.
+    //
+    Executor_Init_Expect();
+
+    Executor_Exec_ExpectAndReturn(TRUE);
+    Executor_Exec_ExpectAndReturn(TRUE);
+    Executor_Exec_ExpectAndReturn(FALSE);
+
+    TEST_ASSERT_EQUAL(0, TestableMain());
+}
+
