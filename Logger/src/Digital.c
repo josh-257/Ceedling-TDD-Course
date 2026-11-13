@@ -15,7 +15,6 @@ void Digital_Init(void)
     Digital_ConfigResistors(0x00, 0x03F);
 }
 
-
 void Digital_ConfigResistors(uint8_t pull_up_mask, uint8_t pull_down_mask)
 {
     uint32_t full_mask_add = 0;
