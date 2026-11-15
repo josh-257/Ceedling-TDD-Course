@@ -6,6 +6,7 @@
 #include "stdint.h"
 #include "Defs.h"
 #include "LPC1768.h"
+#include "stdbool.h"
 #include "Digital.h"
 
 /* Ignore the following warnings, since we are copying code */

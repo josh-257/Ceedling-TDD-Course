@@ -1,0 +1,38 @@
+---
+:source:
+  :path: test
+  :file: TestAnalog_Model.c
+:successes:
+- :test: test_Analog_GetChannel_should_ReturnZeroWhenChannelIllegal
+  :line: 14
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Analog_GetChannel_should_ReturnZeroWhenNoValueCapturedYet
+  :line: 19
+  :message: ''
+  :unity_test_time: 0
+- :test: test_AnalogModel_GetChannel_should_ReturnLatestData
+  :line: 26
+  :message: ''
+  :unity_test_time: 0
+- :test: test_AnalogModel_GetChannel_should_ReturnLatestDataMultipleChannels
+  :line: 39
+  :message: ''
+  :unity_test_time: 0
+- :test: test_AnalogModel_GetChannel_should_NotIgnoreInvalidChannels
+  :line: 59
+  :message: ''
+  :unity_test_time: 0
+- :test: test_AnalogModel_GetChannel_should_DealsWithStaleValues
+  :line: 71
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 6
+  :passed: 6
+  :failed: 0
+  :ignored: 0
+:stdout: []
+:time: 0.03925705800065771

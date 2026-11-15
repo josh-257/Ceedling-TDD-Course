@@ -4,15 +4,19 @@
   :file: TestMain.c
 :successes:
 - :test: test_Main_Should_InitializeTheDrivers
-  :line: 14
+  :line: 15
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Main_Should_ExecuteTheMainLoopAtPeriodicRate
+  :line: 29
   :message: ''
   :unity_test_time: 0
 :failures: []
 :ignores: []
 :counts:
-  :total: 1
-  :passed: 1
+  :total: 2
+  :passed: 2
   :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.03385852199994588
+:time: 0.042214266999508254

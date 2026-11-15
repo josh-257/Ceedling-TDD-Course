@@ -10,24 +10,16 @@
 #include "Core.h"
 #include "MockLED.h"
 #include "MockDigital.h"
+#include "MockAnalog_Conductor.h"
+#include "MockAnalog_Model.h"
 
 /*=======External Functions This Runner Calls=====*/
 extern void setUp(void);
 extern void tearDown(void);
 extern void test_Executor_Init_should_InitializeAllSubsystems(void);
-extern void test_Executor_Exec_should_AlwaysReturnTrue(void);
-extern void test_Executor_Exec_should_ToggleLed0_when_Digital0IsHigh(void);
-extern void test_Executor_Exec_should_ToggleLed0_when_Digital1IsHigh(void);
-extern void test_Executor_Exec_should_ToggleLed0And1_when_Digital0And1IsHigh(void);
-extern void test_Executor_Exec_should_NotToggleLed0_when_Digital0And1IsLow(void);
-extern void test_Executor_Exec_should_ToggleLed1_when_Digital2IsHigh(void);
-extern void test_Executor_Exec_should_ToggleLed1_when_Digital3IsHigh(void);
-extern void test_Executor_Exec_should_ToggleLed1_when_Digital2And3IsHigh(void);
-extern void test_Executor_Exec_should_NotToggleLed1_when_Digital2And3IsLow(void);
-extern void test_Executor_Exec_should_ToggleLed2_when_Digital4IsHigh(void);
-extern void test_Executor_Exec_should_ToggleLed2_when_Digital5IsHigh(void);
-extern void test_Executor_Exec_should_ToggleLed2_when_Digital4And5IsHigh(void);
-extern void test_Executor_Exec_should_NotToggleLed2_when_Digital4And5IsLow(void);
+extern void test_Executor_Exec_should_ToggleLED1IfAdc0HigherthanAdc1(void);
+extern void test_Executor_Exec_should_ToggleLED1IfAdc2HigherthanAdc3(void);
+extern void test_Executor_Exec_should_ToggleLED1IfAdc4HigherthanAdc5(void);
 
 
 /*=======Mock Management=====*/
@@ -35,16 +27,22 @@ static void CMock_Init(void)
 {
   MockLED_Init();
   MockDigital_Init();
+  MockAnalog_Conductor_Init();
+  MockAnalog_Model_Init();
 }
 static void CMock_Verify(void)
 {
   MockLED_Verify();
   MockDigital_Verify();
+  MockAnalog_Conductor_Verify();
+  MockAnalog_Model_Verify();
 }
 static void CMock_Destroy(void)
 {
   MockLED_Destroy();
   MockDigital_Destroy();
+  MockAnalog_Conductor_Destroy();
+  MockAnalog_Model_Destroy();
 }
 
 /*=======Test Reset Options=====*/
@@ -95,20 +93,10 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 int main(void)
 {
   UnityBegin("TestExecutor.c");
-  run_test(test_Executor_Init_should_InitializeAllSubsystems, "test_Executor_Init_should_InitializeAllSubsystems", 16);
-  run_test(test_Executor_Exec_should_AlwaysReturnTrue, "test_Executor_Exec_should_AlwaysReturnTrue", 23);
-  run_test(test_Executor_Exec_should_ToggleLed0_when_Digital0IsHigh, "test_Executor_Exec_should_ToggleLed0_when_Digital0IsHigh", 34);
-  run_test(test_Executor_Exec_should_ToggleLed0_when_Digital1IsHigh, "test_Executor_Exec_should_ToggleLed0_when_Digital1IsHigh", 44);
-  run_test(test_Executor_Exec_should_ToggleLed0And1_when_Digital0And1IsHigh, "test_Executor_Exec_should_ToggleLed0And1_when_Digital0And1IsHigh", 54);
-  run_test(test_Executor_Exec_should_NotToggleLed0_when_Digital0And1IsLow, "test_Executor_Exec_should_NotToggleLed0_when_Digital0And1IsLow", 63);
-  run_test(test_Executor_Exec_should_ToggleLed1_when_Digital2IsHigh, "test_Executor_Exec_should_ToggleLed1_when_Digital2IsHigh", 72);
-  run_test(test_Executor_Exec_should_ToggleLed1_when_Digital3IsHigh, "test_Executor_Exec_should_ToggleLed1_when_Digital3IsHigh", 82);
-  run_test(test_Executor_Exec_should_ToggleLed1_when_Digital2And3IsHigh, "test_Executor_Exec_should_ToggleLed1_when_Digital2And3IsHigh", 92);
-  run_test(test_Executor_Exec_should_NotToggleLed1_when_Digital2And3IsLow, "test_Executor_Exec_should_NotToggleLed1_when_Digital2And3IsLow", 102);
-  run_test(test_Executor_Exec_should_ToggleLed2_when_Digital4IsHigh, "test_Executor_Exec_should_ToggleLed2_when_Digital4IsHigh", 113);
-  run_test(test_Executor_Exec_should_ToggleLed2_when_Digital5IsHigh, "test_Executor_Exec_should_ToggleLed2_when_Digital5IsHigh", 125);
-  run_test(test_Executor_Exec_should_ToggleLed2_when_Digital4And5IsHigh, "test_Executor_Exec_should_ToggleLed2_when_Digital4And5IsHigh", 136);
-  run_test(test_Executor_Exec_should_NotToggleLed2_when_Digital4And5IsLow, "test_Executor_Exec_should_NotToggleLed2_when_Digital4And5IsLow", 149);
+  run_test(test_Executor_Init_should_InitializeAllSubsystems, "test_Executor_Init_should_InitializeAllSubsystems", 36);
+  run_test(test_Executor_Exec_should_ToggleLED1IfAdc0HigherthanAdc1, "test_Executor_Exec_should_ToggleLED1IfAdc0HigherthanAdc1", 44);
+  run_test(test_Executor_Exec_should_ToggleLED1IfAdc2HigherthanAdc3, "test_Executor_Exec_should_ToggleLED1IfAdc2HigherthanAdc3", 55);
+  run_test(test_Executor_Exec_should_ToggleLED1IfAdc4HigherthanAdc5, "test_Executor_Exec_should_ToggleLED1IfAdc4HigherthanAdc5", 66);
 
   CMock_Guts_MemFreeFinal();
   return UnityEnd();

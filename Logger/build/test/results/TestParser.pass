@@ -1,0 +1,78 @@
+---
+:source:
+  :path: test
+  :file: TestParser.c
+:successes:
+- :test: test_Parser_AddChar_should_StartLookingForCmdOnLeftBracket
+  :line: 9
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Parser_AddChar_should_RejectNonBracketCharactersWhileSeekingStart
+  :line: 18
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Parser_AddChar_should_AcceptAValidCommandCharacter
+  :line: 31
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Parser_AddChar_should_RejectInvalidCommandCharacter
+  :line: 46
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Parser_AddChar_should_AcceptALengthOfZero
+  :line: 59
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Parser_AddChar_should_RejectInvalidLengths
+  :line: 66
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Parser_AddChar_should_HandleValidPacketWithNoData
+  :line: 105
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Parser_AddChar_should_HandleBackToBackValidPackets
+  :line: 110
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Parser_AddChar_should_HandlePacketsWithLength1
+  :line: 117
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Parser_AddChar_should_HandlePacketsWithLength9
+  :line: 122
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Parser_AddChar_should_HandleDifferentLengthPacketsBackToBack
+  :line: 127
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Parser_AddChar_should_IgnoreBadStartCharacters
+  :line: 136
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Parser_AddChar_should_IgnoreBadCommandCharacters
+  :line: 146
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Parser_AddChar_should_IgnoreBadLengthCharacters
+  :line: 159
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Parser_AddChar_should_IgnoreBadHexCharacters
+  :line: 173
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Parser_AddChar_should_IgnoreJunkBetweenValidPackets
+  :line: 205
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 16
+  :passed: 16
+  :failed: 0
+  :ignored: 0
+:stdout: []
+:time: 0.038020738000341225

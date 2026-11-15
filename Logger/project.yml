@@ -60,6 +60,7 @@
     - stdint.h
     - Defs.h
     - LPC1768.h
+    - stdbool.h
   :includes_h_pre_orig_header:
     - stdint.h
     - Defs.h
@@ -69,9 +70,9 @@
   :plugins:
     - :expect
     - :ignore
-    #- :array
-    #- :expect_any_args
-    #- :return_thru_ptr
+    - :array
+    - :expect_any_args
+    - :return_thru_ptr
     #- :ignore_arg
     #- :callback
   :defines:
@@ -92,6 +93,7 @@
   :source:
     :includes:
       - Core.h
+      - stdint.h
 
 :tools:
   :test_compiler:

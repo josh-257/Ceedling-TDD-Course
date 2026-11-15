@@ -11,12 +11,14 @@ static const char* CMockString_Digital_Init = "Digital_Init";
 typedef struct _CMOCK_Digital_Init_CALL_INSTANCE
 {
   UNITY_LINE_TYPE LineNumber;
+  char ExpectAnyArgsBool;
 
 } CMOCK_Digital_Init_CALL_INSTANCE;
 
 typedef struct _CMOCK_Digital_GetBits_CALL_INSTANCE
 {
   UNITY_LINE_TYPE LineNumber;
+  char ExpectAnyArgsBool;
   uint8_t ReturnVal;
 
 } CMOCK_Digital_GetBits_CALL_INSTANCE;
@@ -101,6 +103,7 @@ void Digital_Init_CMockExpect(UNITY_LINE_TYPE cmock_line)
   Mock.Digital_Init_CallInstance = CMock_Guts_MemChain(Mock.Digital_Init_CallInstance, cmock_guts_index);
   Mock.Digital_Init_IgnoreBool = (char)0;
   cmock_call_instance->LineNumber = cmock_line;
+  cmock_call_instance->ExpectAnyArgsBool = (char)0;
 }
 
 uint8_t Digital_GetBits(void)
@@ -133,6 +136,7 @@ void Digital_GetBits_CMockIgnoreAndReturn(UNITY_LINE_TYPE cmock_line, uint8_t cm
   Mock.Digital_GetBits_CallInstance = CMock_Guts_MemChain(Mock.Digital_GetBits_CallInstance, cmock_guts_index);
   Mock.Digital_GetBits_IgnoreBool = (char)0;
   cmock_call_instance->LineNumber = cmock_line;
+  cmock_call_instance->ExpectAnyArgsBool = (char)0;
   cmock_call_instance->ReturnVal = cmock_to_return;
   Mock.Digital_GetBits_IgnoreBool = (char)1;
 }
@@ -153,6 +157,7 @@ void Digital_GetBits_CMockExpectAndReturn(UNITY_LINE_TYPE cmock_line, uint8_t cm
   Mock.Digital_GetBits_CallInstance = CMock_Guts_MemChain(Mock.Digital_GetBits_CallInstance, cmock_guts_index);
   Mock.Digital_GetBits_IgnoreBool = (char)0;
   cmock_call_instance->LineNumber = cmock_line;
+  cmock_call_instance->ExpectAnyArgsBool = (char)0;
   cmock_call_instance->ReturnVal = cmock_to_return;
 }
 

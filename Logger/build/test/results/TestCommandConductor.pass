@@ -1,0 +1,34 @@
+---
+:source:
+  :path: test
+  :file: TestCommandConductor.c
+:successes:
+- :test: test_CommandConductor_Init_ShouldInitializeSubmodules
+  :line: 17
+  :message: ''
+  :unity_test_time: 0
+- :test: test_CommandConductor_Exec_should_CheckForMessages_And_DoNothingIfNone
+  :line: 25
+  :message: ''
+  :unity_test_time: 0
+- :test: test_CommandConductor_Exec_should_CheckForMessages_And_DoNothingIfUnknown
+  :line: 33
+  :message: ''
+  :unity_test_time: 0
+- :test: test_CommandConductor_Exec_should_CheckForMessages_And_ProcessIfVersionAndReturnResponse
+  :line: 43
+  :message: ''
+  :unity_test_time: 0
+- :test: test_CommandConductor_Exec_should_CheckForMessages_And_ProcessIfVersionAndHandleErrors
+  :line: 59
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 5
+  :passed: 5
+  :failed: 0
+  :ignored: 0
+:stdout: []
+:time: 0.07466750999992655

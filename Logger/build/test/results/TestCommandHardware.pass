@@ -1,0 +1,26 @@
+---
+:source:
+  :path: test
+  :file: TestCommandHardware.c
+:successes:
+- :test: test_CommandHardware_CheckForMsg_should_ReturnNoneYet_When_NoBytesAvailable
+  :line: 15
+  :message: ''
+  :unity_test_time: 0
+- :test: test_CommandHardware_CheckForMsg_should_GetCharAndAddToPacker_When_BytesAvailable
+  :line: 23
+  :message: ''
+  :unity_test_time: 0
+- :test: test_CommandHardware_CheckForMsg_should_FillOutMsgStruct_When_ZeroLenPacketComplete
+  :line: 33
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 3
+  :passed: 3
+  :failed: 0
+  :ignored: 0
+:stdout: []
+:time: 0.039197076999698766

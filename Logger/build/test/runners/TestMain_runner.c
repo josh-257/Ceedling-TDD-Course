@@ -9,25 +9,30 @@
 #include "stdint.h"
 #include "Core.h"
 #include "MockExecutor.h"
+#include "MockTimer.h"
 
 /*=======External Functions This Runner Calls=====*/
 extern void setUp(void);
 extern void tearDown(void);
 extern void test_Main_Should_InitializeTheDrivers(void);
+extern void test_Main_Should_ExecuteTheMainLoopAtPeriodicRate(void);
 
 
 /*=======Mock Management=====*/
 static void CMock_Init(void)
 {
   MockExecutor_Init();
+  MockTimer_Init();
 }
 static void CMock_Verify(void)
 {
   MockExecutor_Verify();
+  MockTimer_Verify();
 }
 static void CMock_Destroy(void)
 {
   MockExecutor_Destroy();
+  MockTimer_Destroy();
 }
 
 /*=======Test Reset Options=====*/
@@ -78,7 +83,8 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 int main(void)
 {
   UnityBegin("TestMain.c");
-  run_test(test_Main_Should_InitializeTheDrivers, "test_Main_Should_InitializeTheDrivers", 14);
+  run_test(test_Main_Should_InitializeTheDrivers, "test_Main_Should_InitializeTheDrivers", 15);
+  run_test(test_Main_Should_ExecuteTheMainLoopAtPeriodicRate, "test_Main_Should_ExecuteTheMainLoopAtPeriodicRate", 29);
 
   CMock_Guts_MemFreeFinal();
   return UnityEnd();

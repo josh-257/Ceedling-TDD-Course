@@ -1,0 +1,54 @@
+---
+:source:
+  :path: test
+  :file: TestTimer.c
+:successes:
+- :test: test_Timer_Init_should_SetUpTheTickTimerAt10msecPerTick
+  :line: 17
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Timer_GetStamp_should_ReturnCurrentTimeStamp
+  :line: 31
+  :message: ''
+  :unity_test_time: 0
+- :test: test_SysTick_Handler_ShouldIncrementTickByTenMilliseconds
+  :line: 43
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Timer_WaitMilli_should_NotWaitIfMillisecondsIsZero
+  :line: 58
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Timer_WaitMilli_should_IterateUntilCorrectMillisecondsElapsed
+  :line: 67
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Timer_WaitRemainder_should_NotWaitIfWeDidNotAsForTime
+  :line: 76
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Timer_WaitRemainder_should_NotWaitIfWeAlreadyReachedTimestamp
+  :line: 87
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Timer_WaitRemainder_should_WaitIfWeHaveNotReachedTimestamp
+  :line: 98
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Timer_WaitRemainder_should_HandleRollOverInCounter
+  :line: 109
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Timer_WaitRemainder_should_HandleRollOverInCurrentStamp
+  :line: 120
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 10
+  :passed: 10
+  :failed: 0
+  :ignored: 0
+:stdout: []
+:time: 0.031129856000916334

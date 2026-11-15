@@ -1,0 +1,30 @@
+---
+:source:
+  :path: test
+  :file: TestExecutor.c
+:successes:
+- :test: test_Executor_Init_should_InitializeAllSubsystems
+  :line: 36
+  :message: ''
+  :unity_test_time: 0
+:failures:
+- :test: test_Executor_Exec_should_ToggleLED1IfAdc0HigherthanAdc1
+  :line: 44
+  :message: Function AnalogConductor_Exec.  Called fewer times than expected.
+  :unity_test_time: 0
+- :test: test_Executor_Exec_should_ToggleLED1IfAdc2HigherthanAdc3
+  :line: 55
+  :message: Function AnalogConductor_Exec.  Called fewer times than expected.
+  :unity_test_time: 0
+- :test: test_Executor_Exec_should_ToggleLED1IfAdc4HigherthanAdc5
+  :line: 66
+  :message: Function AnalogConductor_Exec.  Called fewer times than expected.
+  :unity_test_time: 0
+:ignores: []
+:counts:
+  :total: 4
+  :passed: 1
+  :failed: 3
+  :ignored: 0
+:stdout: []
+:time: 0.07301880599879951

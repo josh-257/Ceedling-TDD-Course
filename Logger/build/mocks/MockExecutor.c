@@ -11,12 +11,14 @@ static const char* CMockString_Executor_Init = "Executor_Init";
 typedef struct _CMOCK_Executor_Init_CALL_INSTANCE
 {
   UNITY_LINE_TYPE LineNumber;
+  char ExpectAnyArgsBool;
 
 } CMOCK_Executor_Init_CALL_INSTANCE;
 
 typedef struct _CMOCK_Executor_Exec_CALL_INSTANCE
 {
   UNITY_LINE_TYPE LineNumber;
+  char ExpectAnyArgsBool;
   bool ReturnVal;
 
 } CMOCK_Executor_Exec_CALL_INSTANCE;
@@ -101,6 +103,7 @@ void Executor_Init_CMockExpect(UNITY_LINE_TYPE cmock_line)
   Mock.Executor_Init_CallInstance = CMock_Guts_MemChain(Mock.Executor_Init_CallInstance, cmock_guts_index);
   Mock.Executor_Init_IgnoreBool = (char)0;
   cmock_call_instance->LineNumber = cmock_line;
+  cmock_call_instance->ExpectAnyArgsBool = (char)0;
 }
 
 bool Executor_Exec(void)
@@ -133,6 +136,7 @@ void Executor_Exec_CMockIgnoreAndReturn(UNITY_LINE_TYPE cmock_line, bool cmock_t
   Mock.Executor_Exec_CallInstance = CMock_Guts_MemChain(Mock.Executor_Exec_CallInstance, cmock_guts_index);
   Mock.Executor_Exec_IgnoreBool = (char)0;
   cmock_call_instance->LineNumber = cmock_line;
+  cmock_call_instance->ExpectAnyArgsBool = (char)0;
   cmock_call_instance->ReturnVal = cmock_to_return;
   Mock.Executor_Exec_IgnoreBool = (char)1;
 }
@@ -153,6 +157,7 @@ void Executor_Exec_CMockExpectAndReturn(UNITY_LINE_TYPE cmock_line, bool cmock_t
   Mock.Executor_Exec_CallInstance = CMock_Guts_MemChain(Mock.Executor_Exec_CallInstance, cmock_guts_index);
   Mock.Executor_Exec_IgnoreBool = (char)0;
   cmock_call_instance->LineNumber = cmock_line;
+  cmock_call_instance->ExpectAnyArgsBool = (char)0;
   cmock_call_instance->ReturnVal = cmock_to_return;
 }
 

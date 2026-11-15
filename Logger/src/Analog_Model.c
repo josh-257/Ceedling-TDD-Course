@@ -1,4 +1,5 @@
 #include "Analog_Model.h"
+#include "Filter.h"
 
 static uint16_t AnalogValues[NUM_ADC_CHANNELS];
 
@@ -19,5 +20,13 @@ uint16_t AnalogModel_GetChannel(AdcChanel_t channel)
     else
     {
         return 0;
+    }
+}
+
+void AnalogModel_AddReading(AdcChanel_t channel, uint16_t reading)
+{
+    if(channel < NUM_ADC_CHANNELS)
+    {
+        AnalogValues[channel] = Filter_AddVal(AnalogValues[channel], reading);
     }
 }

@@ -13,9 +13,13 @@ int main(void)
 int TestableMain(void)
 #endif
 {
+    uint32_t LastTick;
     Executor_Init();
-
-    while(Executor_Exec());
+    LastTick = Timer_GetStamp();
+    while(Executor_Exec())
+    {
+        LastTick = Timer_WaitRemainder(LastTick, MAIN_TICK_MSEC);
+    }
 
     return 0;
 }

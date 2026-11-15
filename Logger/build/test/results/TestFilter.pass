@@ -1,0 +1,34 @@
+---
+:source:
+  :path: test
+  :file: TestFilter.c
+:successes:
+- :test: test_Filter_AddVal_should_OutputPrevVal_if_PreValAndNewValMatch
+  :line: 6
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Filter_AddVal_should_HandleSimpleMiddleRangeCalculations
+  :line: 14
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Filter_AddVal_should_HandleCalculationsNearBottomOfRange
+  :line: 20
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Filter_AddVal_should_HandleCalculationsNearTopOfRange
+  :line: 26
+  :message: ''
+  :unity_test_time: 0
+- :test: test_Filter_AddVal_should_HanleExtremeCalculations
+  :line: 32
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 5
+  :passed: 5
+  :failed: 0
+  :ignored: 0
+:stdout: []
+:time: 0.03393677799977013

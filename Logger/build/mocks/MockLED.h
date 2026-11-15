@@ -6,6 +6,7 @@
 #include "stdint.h"
 #include "Defs.h"
 #include "LPC1768.h"
+#include "stdbool.h"
 #include "LED.h"
 
 /* Ignore the following warnings, since we are copying code */
@@ -37,18 +38,24 @@ void LED_Init_CMockExpect(UNITY_LINE_TYPE cmock_line);
 void LED_Toggle_CMockIgnore(void);
 #define LED_Toggle_StopIgnore() LED_Toggle_CMockStopIgnore()
 void LED_Toggle_CMockStopIgnore(void);
+#define LED_Toggle_ExpectAnyArgs() LED_Toggle_CMockExpectAnyArgs(__LINE__)
+void LED_Toggle_CMockExpectAnyArgs(UNITY_LINE_TYPE cmock_line);
 #define LED_Toggle_Expect(id) LED_Toggle_CMockExpect(__LINE__, id)
 void LED_Toggle_CMockExpect(UNITY_LINE_TYPE cmock_line, LED_ID_T id);
 #define LED_On_Ignore() LED_On_CMockIgnore()
 void LED_On_CMockIgnore(void);
 #define LED_On_StopIgnore() LED_On_CMockStopIgnore()
 void LED_On_CMockStopIgnore(void);
+#define LED_On_ExpectAnyArgs() LED_On_CMockExpectAnyArgs(__LINE__)
+void LED_On_CMockExpectAnyArgs(UNITY_LINE_TYPE cmock_line);
 #define LED_On_Expect(id) LED_On_CMockExpect(__LINE__, id)
 void LED_On_CMockExpect(UNITY_LINE_TYPE cmock_line, LED_ID_T id);
 #define LED_Off_Ignore() LED_Off_CMockIgnore()
 void LED_Off_CMockIgnore(void);
 #define LED_Off_StopIgnore() LED_Off_CMockStopIgnore()
 void LED_Off_CMockStopIgnore(void);
+#define LED_Off_ExpectAnyArgs() LED_Off_CMockExpectAnyArgs(__LINE__)
+void LED_Off_CMockExpectAnyArgs(UNITY_LINE_TYPE cmock_line);
 #define LED_Off_Expect(id) LED_Off_CMockExpect(__LINE__, id)
 void LED_Off_CMockExpect(UNITY_LINE_TYPE cmock_line, LED_ID_T id);
 

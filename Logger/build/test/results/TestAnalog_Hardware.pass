@@ -1,0 +1,30 @@
+---
+:source:
+  :path: test
+  :file: TestAnalog_Hardware.c
+:successes:
+- :test: test_AnalogHardware_Init_should_InitializeAnalogChansAndStartContinuousAquisitions
+  :line: 13
+  :message: ''
+  :unity_test_time: 0
+- :test: test_AnalogHardware_IsReady_should_ReturnSuitableStatusForState
+  :line: 33
+  :message: ''
+  :unity_test_time: 0
+- :test: test_AnalogHardware_GetReading_should_FetchLatestDataFromAnalogPeripheralShiftedDownCorrectly
+  :line: 72
+  :message: ''
+  :unity_test_time: 0
+- :test: test_AnalogHardware_GetReading_should_IgnoreTheRestOfTheResultsRegisters
+  :line: 89
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 4
+  :passed: 4
+  :failed: 0
+  :ignored: 0
+:stdout: []
+:time: 0.03886236299877055
